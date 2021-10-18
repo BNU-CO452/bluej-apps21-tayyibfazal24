@@ -1,0 +1,19 @@
+Course Computing = new Course("MT1CYS1", "BSc CyberSecurity");
+Computing.print();
+ --------------------------------
+   App211: Course Details
+ --------------------------------
+
+ Course Code: MT1CYS1: BSc CyberSecurity
+
+Student Student = new Student("Tayyib Fazal", 22045400);
+Student.print();
+ Student ID: 22045400 Name: Tayyib Fazal
+Student.enrol(Computing);
+Student.printCourse();
+ --------------------------------
+   App211: Course Details
+ --------------------------------
+
+ Course Code: MT1CYS1: BSc CyberSecurity
+
