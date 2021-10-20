@@ -19,7 +19,7 @@ public class Course
      
     public Course()
     {
-        this("G400", "BSc Computing");
+        this("MT1CYS1", "BSc Cyber Security");
     }
     
     /**
