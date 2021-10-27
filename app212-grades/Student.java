@@ -1,9 +1,10 @@
 import java.util.*;
+import java.util.Random;
 /**
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
- * @author Michael Kölling and David Barnes
+ * @author Tayyib Fazal
  * Modified by Derek Peacock & Nicholas Day
  * @version 2021-08-18
  */
@@ -18,6 +19,7 @@ public class Student
     // The marks awarded for the modules on the course
     private ArrayList<ModuleMark> marks;
     
+    private Random randomMark;
     /**
      * This constructor creates a new student with a
      * fixed name and id. 
@@ -34,7 +36,7 @@ public class Student
     {
         this.name = name;
         this.id = id;
-        
+        randomMark = new Random();
         marks = new ArrayList<ModuleMark>();
     }
 
@@ -67,8 +69,17 @@ public class Student
      */
     public void awardTestMarks()
     {
-        
+        int value = 45;
+        for(Module module : course.modules)
+        {
+            ModuleMark mark =  new ModuleMark (module);
+            mark.setMark(randomMark.nextInt(100));
+            addMark(mark);
+        }
+    
+    
     }
+    
     
     /**
      * Return the full name of this student.
@@ -104,7 +115,11 @@ public class Student
     
     private void printModules()
     {
-
+        for(ModuleMark mark: marks)
+        {
+            mark.print();
+            System.out.println("\t" + course.convertToGrade(mark.getValue()));
+        }
     }
     
     public void printTranscript()
@@ -122,6 +137,7 @@ public class Student
         System.out.println(" Code \t Module \t\tCredit\t Mark \t Grade");
         System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
         
+        printModules();
        
         Grades finalGrade = course.calculateGrade(marks);
         

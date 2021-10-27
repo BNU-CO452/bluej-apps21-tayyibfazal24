@@ -43,10 +43,10 @@ public class Course
      */
     public void createModules()
     {
-        Module co452 = new Module("CO452", "Programming Concepts");
+        Module co452 = new Module("CO452", "Programming Concepts  ");
         Module co450 = new Module("CO450", "Computer Architectures");
-        Module co454 = new Module("CO454", "Digital Technologies");
-        Module co456 = new Module("CO456", "Web Development");
+        Module co454 = new Module("CO454", "Digital Technologies  ");
+        Module co456 = new Module("CO456", "Web Development       ");
         modules.add(co452);
         modules.add(co450);
         modules.add(co454);
@@ -62,11 +62,22 @@ public class Course
     }
     
     /**
-     * 
+     * Convert an integer mark into a letter grade
      */
     public Grades convertToGrade(int mark)
     {
-        return Grades.NS;
+        if (mark > 0 && mark <= 39)
+            return Grades.F;
+        else if (mark >= 40 && mark <= 49)
+            return Grades.D;
+        else if (mark >= 50 && mark <= 59)
+            return Grades.C;
+        else if (mark >= 60 && mark <= 69)
+            return Grades.B;
+        else if (mark >= 70 && mark <= 100)
+            return Grades.A;
+        else
+            return Grades.NS;
     }
     
     /**
@@ -75,7 +86,15 @@ public class Course
      */
     public Grades calculateGrade(ArrayList<ModuleMark> marks)
     {
-        return Grades.NS;
+        int total =0;
+        int finalMark = 0;
+        for (ModuleMark mark: marks)
+        {
+            total += mark.getValue();
+        }
+        finalMark = total / 4;
+        finalGrade = convertToGrade(finalMark);
+        return finalGrade;
     }
     
     /**
