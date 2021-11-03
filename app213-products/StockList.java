@@ -46,6 +46,24 @@ public class StockList
      */
     public void buyProduct(int productID, int amount)
     {
+        Product product = findProduct(productID);
+        
+        if(product != null) 
+        {
+            if(product.getQuantity() < 1000)
+            {
+                product.increaseQuantity(amount);
+                System.out.println("Bought " + amount + " of " + product.getName());
+            }
+            else
+            {
+                System.out.println(product.getName() + "is full");
+            }
+        }
+        else
+        {
+            // printout message
+        }
     }
     
     /**
@@ -54,6 +72,13 @@ public class StockList
      */
     public Product findProduct(int productID)
     {
+        for(Product product : stock)
+        {
+            if(product.getID() == productID)
+            {
+                return product;
+            }
+        }
         return null;
     }
     
@@ -63,26 +88,30 @@ public class StockList
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int productID)
+    public void sellProduct(int productID, int amount)
     {
         Product product = findProduct(productID);
         
         if(product != null) 
         {
-            if(product.getQuantity() > 0)
+            if(product.getQuantity() > 0 && product.getQuantity() >= amount)
             {
-                product.decreaseQuantity(1);
-                
-                // printout message
+                product.decreaseQuantity(amount);
+                System.out.println("Sold " + amount + " of " + product.getName());
+            }
+            else if(product.getQuantity() >= amount)
+            {
+                System.out.println("Cannot sell " + amount + " of " + product.getName() 
+                    + " because only have " + product.getQuantity());
             }
             else
             {
-                // printout message
+                System.out.println(product.getName() + "is out of stock");
             }
         }
         else
         {
-            // printout message
+            System.out.println("Out of stock");
         }
     }    
 
@@ -133,7 +162,7 @@ public class StockList
     public void printHeading()
     {
         System.out.println();
-        System.out.println(" Peacock's Stock List");
+        System.out.println(" Tayyib's Bookstore ");
         System.out.println(" ====================");
         System.out.println();
     }

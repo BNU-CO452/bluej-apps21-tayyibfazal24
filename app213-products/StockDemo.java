@@ -26,6 +26,13 @@ public class StockDemo
         stock.add(new Product(101, "Samsung Galaxy S20"));
         stock.add(new Product(102, "Apple iPhone 12"));
         stock.add(new Product(103, "Google Pixel 4A"));
+        stock.add(new Product(104, "Golden Compass" ));
+        stock.add(new Product(105, "Amber Spyglass" ));
+        stock.add(new Product(106, "Subtle Knife" ));
+        stock.add(new Product(107, "Six of Crows" ));
+        stock.add(new Product(108, "Crowned King" ));
+        stock.add(new Product(109, " " ));
+        stock.add(new Product(110, " " ));
     }
     
     /**
@@ -50,9 +57,17 @@ public class StockDemo
     
     private void buyProducts()
     {
+        stock.buyProduct(101, 7);
+        stock.buyProduct(102, 4);
+        stock.buyProduct(103, 3);
+        stock.buyProduct(104, 13);
     }
 
     private void sellProducts()
     {
+        stock.sellProduct(101,2);
+        stock.sellProduct(102,6);
+        stock.sellProduct(103,1);
+        stock.sellProduct(104,10);
     }    
 }
