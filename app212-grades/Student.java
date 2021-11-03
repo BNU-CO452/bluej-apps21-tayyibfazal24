@@ -5,7 +5,6 @@ import java.util.Random;
  * It holds the student details relevant in our context.
  * 
  * @author Tayyib Fazal
- * Modified by Derek Peacock & Nicholas Day
  * @version 2021-08-18
  */
 public class Student
