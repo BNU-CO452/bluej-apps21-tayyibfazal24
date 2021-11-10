@@ -21,6 +21,15 @@ public class StockList
     }
 
     /**
+     * Removing a product from the stock list
+     */
+    public void remove (int productID)
+    {
+        Product product = findProduct(productID);
+        stock.remove(product);
+    }
+    
+    /**
      * Add a product to the list.
      * @param item The product item to be added.
      */
@@ -62,7 +71,7 @@ public class StockList
         }
         else
         {
-            // printout message
+            System.out.println("ERROR");
         }
     }
     
@@ -159,11 +168,40 @@ public class StockList
         System.out.println();
     }
     
+    /**
+     * Lists all products that start with a specific phrase
+     */
+    
+    public void searchName()
+    {
+        System.out.println("These items contain the keyword 'The':");
+        for(Product product : stock)
+        {
+            if (product.getName().contains("The"))
+            {
+                System.out.println(product.getName());
+            }
+        }
+    }
+    
+    /**
+     * Lists all products that fall below a specific stock level
+     */
+    
+    public void lowStock (int productID)
+    {
+        Product product = findProduct(productID);
+        if (product.getQuantity() < 3)
+        {
+            System.out.println(product.getName() + "is low on stock");
+            buyProduct (productID, 3);
+        }
+    }
     public void printHeading()
     {
         System.out.println();
         System.out.println(" Tayyib's Bookstore ");
-        System.out.println(" ====================");
+        System.out.println(" ===================");
         System.out.println();
     }
 }
