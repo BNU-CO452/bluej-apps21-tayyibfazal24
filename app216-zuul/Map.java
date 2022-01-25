@@ -57,8 +57,6 @@ public class Map
     private void createRoom1()
     {
         Room1 = new Location("The first room of the dungeon");
-        
-        
     }
     
     /**
@@ -67,7 +65,6 @@ public class Map
     private void createRoom2()
     {
         Room2 = new Location("The second room of the dungeon");
-        
     }
     
     /**
@@ -76,7 +73,6 @@ public class Map
     private void createRoom3()
     {
         Room3 = new Location("The third room of the dungeon");
-        
     }
     
     /**
@@ -85,7 +81,6 @@ public class Map
     private void createRoom4()
     {
         Room4 = new Location("The fourth room of the dungeon");
-        
     }
     
     /**
@@ -105,21 +100,19 @@ public class Map
     {
         //create the Locations
         Room6 = new Location("The sixth room of the dungeon");
-        
     }
     
     /**
-     * Create the seventh and link it to the Hallway
+     * Create the seventh room and link it to the Hallway
      */
     private void createRoom7()
     {
         // create the Locations
         Room7 = new Location("The seventh room of the dungeon");
-        
     }
     
     /**
-     * Create the fifth room and link it to the Hallway
+     * Create the eighth room and link it to the Hallway
      */
     private void createRoom8()
     {
@@ -129,7 +122,7 @@ public class Map
     }
     
     /**
-     * Create the Hallway
+     * Create the Hallway and set exits to every other room
      */
     private void createHallway()
     {
