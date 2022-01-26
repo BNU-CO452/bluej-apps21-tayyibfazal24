@@ -5,29 +5,17 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Item extends Game
+public class Item
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Item
-     */
-    public Item()
+    private String name;
+    private String description;
+    
+    public Item(String name, String description)
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.description = description;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
+    public String getItemName() {return name;}
+    public String getItemDescription() {return description;}
 }

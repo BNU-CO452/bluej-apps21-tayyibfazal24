@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * This class is reponsible for creating and
  * linking all the Locations in the game to
@@ -73,6 +73,7 @@ public class Map
     private void createRoom3()
     {
         Room3 = new Location("The third room of the dungeon");
+        Room3.setItem(new Item("key", "\n"));
     }
     
     /**
@@ -90,7 +91,7 @@ public class Map
     {
         // create the Locations
         Room5 = new Location("The fifth room of the dungeon");
-        
+        Room5.setItem(new Item("key","\n"));
     }
     
     /**
@@ -100,6 +101,7 @@ public class Map
     {
         //create the Locations
         Room6 = new Location("The sixth room of the dungeon");
+        
     }
     
     /**
